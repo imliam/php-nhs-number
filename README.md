@@ -12,7 +12,7 @@ Utility class to validate, format and generate NHS numbers.
 <!-- TOC -->
 
 - [NHS Numbers](#nhs-numbers)
-    - [F.A.Q.](#faq)
+    - [🤔 F.A.Q.](#🤔-faq)
         - [What is an NHS number?](#what-is-an-nhs-number)
         - [How do you validate an NHS number?](#how-do-you-validate-an-nhs-number)
     - [💾 Installation](#💾-installation)
@@ -27,7 +27,7 @@ Utility class to validate, format and generate NHS numbers.
 
 <!-- /TOC -->
 
-## F.A.Q.
+## 🤔 F.A.Q.
 
 ### What is an NHS number?
 
