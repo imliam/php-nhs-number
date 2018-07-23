@@ -2,8 +2,8 @@
 
 namespace ImLiam\NhsNumber\Tests\Unit;
 
-use ImLiam\NhsNumber\Tests\TestCase;
 use ImLiam\NhsNumber\NhsNumber;
+use ImLiam\NhsNumber\Tests\TestCase;
 use ImLiam\NhsNumber\InvalidNhsNumberException;
 
 class NhsNumberTest extends TestCase
@@ -45,7 +45,7 @@ class NhsNumberTest extends TestCase
     /** @test */
     public function these_nhs_numbers_are_valid()
     {
-        foreach($this->validNhsNumbers as $number) {
+        foreach ($this->validNhsNumbers as $number) {
             $this->assertTrue((new NhsNumber($number))->validate());
         }
     }

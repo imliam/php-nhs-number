@@ -2,8 +2,6 @@
 
 namespace ImLiam\NhsNumber;
 
-use ImLiam\NhsNumber\InvalidNhsNumberException;
-
 class NhsNumber
 {
     /**
@@ -33,7 +31,7 @@ class NhsNumber
     /**
      * Construct the NHS number object.
      *
-     * @param string|integer $number
+     * @param string|int $number
      */
     public function __construct($number)
     {
@@ -43,7 +41,7 @@ class NhsNumber
     /**
      * Determine whether or not the current NHS number is valid.
      *
-     * @return boolean
+     * @return bool
      */
     public function isValid(): bool
     {
@@ -64,7 +62,7 @@ class NhsNumber
      */
     public function validate(): bool
     {
-        if (! preg_match("/^[0-9]{10}$/", $this->number)) {
+        if (! preg_match('/^[0-9]{10}$/', $this->number)) {
             throw new InvalidNhsNumberException('An NHS number must be numeric and 10 characters long.');
         }
 
@@ -82,7 +80,7 @@ class NhsNumber
      * Loop over each digit of the current NHS number and calculate
      * the appropriate checksum based on the predefined multipliers.
      *
-     * @return integer
+     * @return int
      */
     protected function getChecksum(): int
     {
@@ -100,9 +98,9 @@ class NhsNumber
     }
 
     /**
-     * Calculate
+     * Calculate.
      *
-     * @return integer
+     * @return int
      */
     protected function getChecksumTotal(): int
     {
@@ -153,7 +151,7 @@ class NhsNumber
     /**
      * Generate a single random NHS number.
      *
-     * @param boolean $unique
+     * @param bool $unique
      * @return string
      */
     public static function getRandomNumber(): string
@@ -164,8 +162,8 @@ class NhsNumber
     /**
      * Generate a list of random NHS numbers.
      *
-     * @param integer $count
-     * @param boolean $unique
+     * @param int $count
+     * @param bool $unique
      * @return array
      */
     public static function getRandomNumbers(int $count = 1, bool $unique = true): array
