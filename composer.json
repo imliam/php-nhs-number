@@ -1,0 +1,43 @@
+{
+    "name": "imliam/php-nhs-number",
+    "description": "Utility class to validate, format and generate NHS numbers.",
+    "keywords": [
+        "imliam",
+        "php-nhs-number"
+    ],
+    "homepage": "https://github.com/imliam/php-nhs-number",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Liam Hammett",
+            "email": "liam@liamhammett.com",
+            "homepage": "https://liamhammett.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImLiam\\NhsNumber\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ImLiam\\NhsNumber\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "test:windows": "vendor\\bin\\phpunit",
+        "test-coverage:windows": "vendor\\bin\\phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
