@@ -35,7 +35,7 @@ class NhsNumber
      */
     public function __construct($number)
     {
-        $this->number = (string) trim($number);
+        $this->number = str_replace(' ', '', $number);
     }
 
     /**
