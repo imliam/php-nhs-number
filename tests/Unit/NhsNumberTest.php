@@ -76,4 +76,33 @@ class NhsNumberTest extends TestCase
 
         $this->assertEquals('907 784 4449', $number->format());
     }
+
+    /** @test */
+    public function a_random_valid_nhs_number_can_be_validated()
+    {
+        $number = NhsNumber::getRandomNumber();
+        $this->assertTrue((new NhsNumber($number))->isValid());
+    }
+
+    /** @test */
+    public function a_invalid_nhs_number_can_be_validated()
+    {
+        $this->assertFalse((new NhsNumber('1000'))->isValid());
+    }
+
+    /** @test */
+    public function it_can_get_number()
+    {
+        $number = new NhsNumber('9077844449');
+
+        $this->assertEquals('9077844449', $number->getNumber());
+    }
+
+    /** @test */
+    public function it_can_get_formatted_nhs_number()
+    {
+        $number = new NhsNumber('9077844449');
+
+        $this->assertEquals('907 784 4449', (string) $number);
+    }
 }
