@@ -72,7 +72,7 @@ The algorithm to validate an NHS number using its "check digit" is as follows:
 You can install the package with [Composer](https://getcomposer.org/) using the following command:
 
 ```bash
-composer require imliam/php-nhs-number:^1.0.0
+composer require imliam/php-nhs-number:^1.1
 ```
 
 ## 📝 Usage
