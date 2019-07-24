@@ -151,7 +151,6 @@ class NhsNumber
     /**
      * Generate a single random NHS number.
      *
-     * @param bool $unique
      * @return string
      */
     public static function getRandomNumber(): string
