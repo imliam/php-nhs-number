@@ -112,13 +112,13 @@ try {
 }
 ```
 
-To generate a single or multiple random valid NHS numbers for testing purposes, call the `::generateRandomNumber()` or `::generateRandomNumber($count)` static methods respectively.
+To generate a single or multiple random valid NHS numbers for testing purposes, call the `::getRandomNumber()` or `::getRandomNumbers($count)` static methods respectively.
 
 ```php
-echo \ImLiam\NhsNumber\NhsNumber::generateRandomNumber();
+echo \ImLiam\NhsNumber\NhsNumber::getRandomNumber();
 // '9278462608'
 
-echo \ImLiam\NhsNumber\NhsNumber::generateRandomNumbers(5);
+echo \ImLiam\NhsNumber\NhsNumber::getRandomNumbers(5);
 // ['7448556886', '0372104223', '8416367035']
 ```
 
