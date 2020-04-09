@@ -8,23 +8,27 @@ use ImLiam\NhsNumber\InvalidNhsNumberException;
 
 class NhsNumberTest extends TestCase
 {
-    protected $validNhsNumbers = [
-        '9077844449',
-        '4698651433',
-        '5835160933',
-        '5462903022',
-        '1032640960',
-        '1740296788',
-        '9278462608',
-        '7448556886',
-        '0372104223',
-        '8416367035',
-    ];
+    public function validNhsNumbers()
+    {
+        return [
+            ['9077844449'],
+            ['4698651433'],
+            ['5835160933'],
+            ['5462903022'],
+            ['1032640960'],
+            ['1740296788'],
+            ['9278462608'],
+            ['7448556886'],
+            ['0372104223'],
+            ['8416367035'],
+        ];
+    }
 
     /** @test */
     public function a_string_is_not_a_valid_nhs_number()
     {
         $this->expectException(InvalidNhsNumberException::class);
+        $this->expectExceptionMessage('An NHS number must be numeric and 10 characters long.');
         (new NhsNumber('Hello world.'))->validate();
     }
 
@@ -32,6 +36,7 @@ class NhsNumberTest extends TestCase
     public function a_number_must_not_have_less_than_10_digits()
     {
         $this->expectException(InvalidNhsNumberException::class);
+        $this->expectExceptionMessage('An NHS number must be numeric and 10 characters long.');
         (new NhsNumber(12345))->validate();
     }
 
@@ -39,15 +44,25 @@ class NhsNumberTest extends TestCase
     public function a_number_must_not_have_more_than_10_digits()
     {
         $this->expectException(InvalidNhsNumberException::class);
+        $this->expectExceptionMessage('An NHS number must be numeric and 10 characters long.');
         (new NhsNumber(12345678901234567890))->validate();
     }
 
     /** @test */
-    public function these_nhs_numbers_are_valid()
+    public function a_number_digit_check_must_not_match()
     {
-        foreach ($this->validNhsNumbers as $number) {
-            $this->assertTrue((new NhsNumber($number))->validate());
-        }
+        $this->expectException(InvalidNhsNumberException::class);
+        $this->expectExceptionMessage('The NHS number\'s check digit does not match.');
+        (new NhsNumber(1234567890))->validate();
+    }
+
+    /**
+     * @test
+     * @dataProvider validNhsNumbers
+     */
+    public function these_nhs_numbers_are_valid($validNhsNumber)
+    {
+        $this->assertTrue((new NhsNumber($validNhsNumber))->validate());
     }
 
     /** @test */
