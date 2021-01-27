@@ -1,5 +1,5 @@
 {
-    "name": "imliam/php-nhs-number",
+    "name": "fredbradley/php-nhs-number",
     "description": "Utility class to validate, format and generate NHS numbers.",
     "keywords": [
         "imliam",
