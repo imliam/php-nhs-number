@@ -12,6 +12,12 @@
             "name": "Liam Hammett",
             "email": "liam@liamhammett.com",
             "homepage": "https://liamhammett.com",
+            "role": "Original Developer"
+        },
+        {
+            "name": "Fred Bradley",
+            "email": "code@fredbradley.co.uk",
+            "homepage": "https://www.fredbradley.co.uk",
             "role": "Developer"
         }
     ],
