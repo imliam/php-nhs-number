@@ -1,5 +1,5 @@
 {
-    "name": "imliam/php-nhs-number",
+    "name": "fredbradley/php-nhs-number",
     "description": "Utility class to validate, format and generate NHS numbers.",
     "keywords": [
         "imliam",
@@ -12,14 +12,20 @@
             "name": "Liam Hammett",
             "email": "liam@liamhammett.com",
             "homepage": "https://liamhammett.com",
+            "role": "Original Developer"
+        },
+        {
+            "name": "Fred Bradley",
+            "email": "code@fredbradley.co.uk",
+            "homepage": "https://www.fredbradley.co.uk",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "~9.0"
     },
     "autoload": {
         "psr-4": {
